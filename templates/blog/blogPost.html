@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}blogPost
+{% endblock title %}
+{% block body %}
+<div class="container my-3">
+  <div class="card bg-dark text-dark">
+    <img src="/media/{{post.image}}" class="card-img" style="max-height: 18rem;"
+      alt="...">
+    <div class="card-img-overlay">
+      <h5 class="card-title"><h1>{{post.title}}</h1></h5>
+
+      <p class="card-text">{{post.timeStamp}}</p>
+    </div>
+  </div>
+
+  <div class="blog-post">
+    <h2 class="blog-post-title">{{post.title}}</h2>
+    <p class="blog-post-meta">{{post.timeStamp }}by <a
+        href={{post.social_media_link}}>{{post.author}}</a>
+      
+      </p>
+      <button type="button" class="btn btn-primary">
+        views <span class="badge badge-light">{{post.views}}</span>
+        
+      </button>
+
+    <p>{{post.content}}</p>
+
+  </div>
+  <aside class="col-md-4 blog-sidebar">
+    <div class="p-4 mb-3 bg-light rounded">
+      <h4 class="font-italic">About the page</h4>
+      <p class="mb-0">this is a blog page designed by shayan and supported by
+        various .</p>
+    </div>
+
+    <div class="p-4">
+      <h3 class="font-italic">DATE</h3>
+      <ol class="list-unstyled mb-0">
+        <li><h5>{{post.timeStamp}}</h5></li>
+
+      </ol>
+    </div>
+
+    <div class="p-4">
+      <h4 class="font-italic">About author</h4>
+      <ol class="list-unstyled">
+
+
+        <li><a href={{post.social_media_link}}>SOCIAL MEDIA</a></li>
+      </ol>
+    </div>
+  </aside>
+
+</div>
+
+<!--<div class="container">
+  <h2>COMMENTS</h2>
+  <form action="/blog/postComment" method ="post">
+    {% csrf_token %}
+    <input type ="text" name="comment" placeholder="enter comment">
+    <input type ="hidden" name="postSno" value="{{post.sno}}">
+    <input type ="submit" value="submit">
+
+
+</form>
+  <div class="row my-3">
+    <div class="clo-md-2 bg-success"> image here</div>
+    <div class="col-md-10 bg-danger"><b>User name</b> comment</div>
+  </div>
+  
+</div>-->
+
+{% endblock body %}
+{% block blogactive %}active
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}contact
+{% endblock title %}
+{% block css %}
+
+    {% endblock css %}
+{% block body %}
+<div class="card bg-dark text-white mt-3" style="height: 250px;">
+  <img src="https://i.imgur.com/ghfxxNh.png" class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Contact us</h5>
+    <p class="card-text">Help us improve,we'll try to give reply to each message.</p>
+    <p class="card-text">-from Shayan</p>
+  </div>
+</div>
+<div class="container my-3">
+<h1>contact</h1>
+<form method="post" action="/contact/" >
+ {% csrf_token %}
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="Name" name="name"aria-describedby="Name">
+    
+  </div>
+    <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone no.</label>
+    <input type="phone" class="form-control" name="phone" id="phone">
+  </div>
+  <div class="form-group">
+    <label for="content">how can we help</label>
+    
+    <textarea class="form-control" name="content" id="content" cols="30" rows="5"></textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+{% endblock body %}
+{% block contactactive %}active
+{% endblock %}

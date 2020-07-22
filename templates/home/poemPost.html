@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}blogPost
+{% endblock title %}
+{% block body %}
+<div class="container mt-5">
+  <div class="card border-primary " >
+   <img src="/media/{{post.image}}" class="card-img" style="height:auto; "alt="...">
+   <div class="card-body my-3">
+     <h3 class="card-title">{{post.title}}</h3>
+     <br>
+     <div class="container mt-3">
+     <h4 class="font-italic">---<a href={{post.social_media_link}}>{{post.author}}</a></h4>
+     </div>
+     <br>
+     
+     <p class="card-text"><small class="text-muted">{{post.timeStamp}}</small></p>
+     <button type="button" class="btn btn-primary">
+      views <span class="badge badge-light">{{post.views}}</span>
+      
+    </button>
+     <div class="my-2">
+      
+     
+   </div>
+   </div>
+
+
+  
+</div>
+
+{% endblock body %}
+{% block poemactive %}active
+{% endblock %}
